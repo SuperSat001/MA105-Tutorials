@@ -1,0 +1,524 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 2.0 (March 8, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Author:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	11pt, % Set the default font size, options include: 8pt, 9pt, 10pt, 11pt, 12pt, 14pt, 17pt, 20pt
+	%t, % Uncomment to vertically align all slide content to the top of the slide, rather than the default centered
+	%aspectratio=169, % Uncomment to set the aspect ratio to a 16:9 ratio which matches the aspect ratio of 1080p and 4K screens and projectors
+]{beamer}
+
+\graphicspath{{Images/}{./}} % Specifies where to look for included images (trailing slash required)
+
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule for better rules in tables
+
+%----------------------------------------------------------------------------------------
+%	SELECT LAYOUT THEME
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with a number of default layout themes which change the colors and layouts of slides. Below is a list of all themes available, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+%----------------------------------------------------------------------------------------
+%	SELECT COLOR THEME
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with a number of color themes that can be applied to any layout theme to change its colors. Uncomment each of these in turn to see how they change the colors of your selected layout theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{monarca}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{spruce}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%----------------------------------------------------------------------------------------
+%	SELECT FONT THEME & FONTS
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with several font themes to easily change the fonts used in various parts of the presentation. Review the comments beside each one to decide if you would like to use it. Note that additional options can be specified for several of these font themes, consult the beamer documentation for more information.
+
+\usefonttheme{default} % Typeset using the default sans serif font
+%\usefonttheme{serif} % Typeset using the default serif font (make sure a sans font isn't being set as the default font if you use this option!)
+%\usefonttheme{structurebold} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in bold
+%\usefonttheme{structureitalicserif} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in italic serif
+%\usefonttheme{structuresmallcapsserif} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in small caps serif
+
+%------------------------------------------------
+
+%\usepackage{mathptmx} % Use the Times font for serif text
+\usepackage{palatino} % Use the Palatino font for serif text
+
+%\usepackage{helvet} % Use the Helvetica font for sans serif text
+\usepackage[default]{opensans} % Use the Open Sans font for sans serif text
+%\usepackage[default]{FiraSans} % Use the Fira Sans font for sans serif text
+%\usepackage[default]{lato} % Use the Lato font for sans serif text
+
+%----------------------------------------------------------------------------------------
+%	SELECT INNER THEME
+%----------------------------------------------------------------------------------------
+
+% Inner themes change the styling of internal slide elements, for example: bullet points, blocks, bibliography entries, title pages, theorems, etc. Uncomment each theme in turn to see what changes it makes to your presentation.
+
+%\useinnertheme{default}
+\useinnertheme{circles}
+%\useinnertheme{rectangles}
+%\useinnertheme{rounded}
+%\useinnertheme{inmargin}
+
+%----------------------------------------------------------------------------------------
+%	SELECT OUTER THEME
+%----------------------------------------------------------------------------------------
+
+% Outer themes change the overall layout of slides, such as: header and footer lines, sidebars and slide titles. Uncomment each theme in turn to see what changes it makes to your presentation.
+
+%\useoutertheme{default}
+%\useoutertheme{infolines}
+%\useoutertheme{miniframes}
+%\useoutertheme{smoothbars}
+%\useoutertheme{sidebar}
+%\useoutertheme{split}
+%\useoutertheme{shadow}
+%\useoutertheme{tree}
+%\useoutertheme{smoothtree}
+
+%\setbeamertemplate{footline} % Uncomment this line to remove the footer line in all slides
+%\setbeamertemplate{footline}[page number] % Uncomment this line to replace the footer line in all slides with a simple slide count
+
+%\setbeamertemplate{navigation symbols}{} % Uncomment this line to remove the navigation symbols from the bottom of all slides
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title[Tut 1]{Sequences, limits, continuity, differentiability} % The short title in the optional parameter appears at the bottom of every slide, the full title in the main parameter is only on the title page
+
+% \subtitle{MA105 Tutorial Sheet - 1} % Presentation subtitle, remove this command if a subtitle isn't required
+
+\author[Satyankar Chandra]{Satyankar Chandra \\ \scriptsize Dept. of CSE, 2nd Year} % Presenter name(s), the optional parameter can contain a shortened version to appear on the bottom of every slide, while the main parameter will appear on the title slide
+
+% \institute[UC]{IIT Bombay \\ \smallskip \textit{22b0967@iitb.ac.in}} % Your institution, the optional parameter can be used for the institution shorthand and will appear on the bottom of every slide after author names, while the required parameter is used on the title slide and can include your email address or additional information on separate lines
+
+\date[August 9, 2023]{MA105 Tutorial Sheet - 1 \\ \scriptsize August 9, 2023 16:00-17:00} % Presentation date or conference/meeting name, the optional parameter can contain a shortened version to appear on the bottom of every slide, while the required parameter value is output to the title slide
+
+%----------------------------------------------------------------------------------------
+\setbeamertemplate{navigation symbols}{}
+\begin{document}
+
+%---------------
+%Whatsapp group
+\begin{frame}
+	\frametitle{Before we get started}
+	Join the Whatsapp group.
+	\begin{figure}
+		\centering
+		\includegraphics[width=3cm]{./qr.jpeg}
+		\caption{https://tinyurl.com/ma105tut}
+	\end{figure}
+	
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SLIDE
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+	\titlepage % Output the title slide, automatically created using the text entered in the PRESENTATION INFORMATION block above
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS SLIDE
+%----------------------------------------------------------------------------------------
+
+% The table of contents outputs the sections and subsections that appear in your presentation, specified with the standard \section and \subsection commands. You may either display all sections and subsections on one slide with \tableofcontents, or display each section at a time on subsequent slides with \tableofcontents[pausesections]. The latter is useful if you want to step through each section and mention what you will discuss.
+
+\begin{frame}
+	\frametitle{Problems to be discussed} % Slide title, remove this command for no title
+	
+	%\tableofcontents % Output the table of contents (all sections on one slide)
+	%\tableofcontents[pausesections] % Output the table of contents (break sections up across separate slides)
+	Problem -
+	\begin{itemize}
+		\item 1. (iii)
+		\item 2. (i), (iv)
+		\item 3. (ii)
+		\item 5. (ii)
+		\item 6
+	\end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION BODY SLIDES
+%----------------------------------------------------------------------------------------
+
+% \section{1} % Sections are added in order to organize your presentation into discrete blocks, all sections and subsections are automatically output to the table of contents as an overview of the talk but NOT output in the presentation as separate slides
+
+%------------------------------------------------
+% 1. (iii)
+\begin{frame}
+	\frametitle{Problem 1}
+	
+	\begin{block}{1. (iii)}
+		Using the $(\epsilon-N)$ definition of a limit, prove:
+		\[ \lim _ {n \to \infty} \frac{n^\frac23 \sin{(n!)}}{n + 1} = 0\]
+
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 1}
+
+	\textit{Solution} to 1. (iii) -
+
+	\bigskip
+	
+	We have to show that $~ \forall \epsilon > 0, ~ \exists n_0 \in \mathbb{N}$ such that $\forall n > n_0$, 
+	\[ \left | \frac{n^\frac23 \sin{(n!)}}{n + 1} - 0 \right | < \epsilon\]
+
+	Note that $|\sin{(x)}| \leq 1 ~ \forall x \in \mathbb{R}$, and hence
+
+	\[ \left | \frac{n^\frac23 \sin{(n!)}}{n + 1} \right | \leq \left | \frac{n^\frac23}{n + 1} \right | \]
+
+	Now,
+
+	\[\left | \frac{n^\frac23}{n + 1} \right | < \left | \frac{n^\frac23}{n} \right | = \frac{1}{n^\frac13} < \epsilon\]
+
+	So we can set $n_0 = \lfloor \frac{1}{\epsilon^3} \rfloor + 1$ and be done.
+\end{frame}
+
+%------------------------------------------------
+% 2. (i, iv)
+\begin{frame}
+	\frametitle{Problem 2}
+	
+	\begin{block}{2. (i)}
+		Find the limit:
+		\[ \lim _ {n \to \infty} \left ( \frac{n}{n^2+1} + \frac{n}{n^2 + 2} + \dots + \frac{n}{n^2 + n} \right )\]
+	\end{block}
+
+	\begin{block}{2. (iv)}
+		Find the limit:
+		\[ \lim _ {n \to \infty} n^{\frac{1}{n}}\]
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 2}
+
+	\textit{Solution} to 2. (i) -
+
+	\bigskip
+	
+	Note that for $i = 1, 2, \dots ,n$ we have,
+
+	\[ \frac{n}{n^2 + n} \leq \frac{n}{n^2+i} \leq \frac{n^2}{n^2} \]
+
+	Hence,
+
+	\[ \lim_{n \to \infty} \sum _{\i=1} ^n \frac{n}{n^2 + n} \leq  \lim_{n \to \infty} \sum _{\i=1} ^n \frac{n}{n^2+i} \leq \lim_{n \to \infty} \sum _{\i=1} ^n \frac{n^2}{n^2} 	\]
+
+	Now, \[ \lim_{n \to \infty} \sum _{\i=1} ^n \frac{n}{n^2 + n} = \lim_{n \to \infty} \frac{n^2}{n^2 + n} = \frac{1}{1 + \frac{1}{n}} = 1 \] 
+\end{frame}
+
+\begin{frame}[t]
+	and
+	\[ \lim_{n \to \infty} \sum _{\i=1} ^n \frac{n}{n^2} = \lim_{n \to \infty} \frac{n^2}{n^2} = 1 \]
+
+	So,
+
+	\[ 1 \leq  \lim_{n \to \infty} \sum _{\i=1} ^n \frac{n}{n^2+i} \leq 1 \]
+
+	\medskip
+
+	And hence by \textit{Squeeze/Sandwich Theorem} the limit exists and,
+
+	\[ \lim_{n \to \infty} \sum _{\i=1} ^n \frac{n}{n^2+i} = 1 \]
+
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 2}
+
+	\textit{Solution} to 2. (iv) -
+
+	\bigskip
+	
+	We see that when $n > 1$, we have $n^\frac{1}{n} > 1$.
+
+	\smallskip
+
+	Hence, let $n^\frac{1}{n} = 1 + h_n$ for some sequence $\{h_n\}$.
+
+	\medskip
+
+	Now,
+	\begin{align*}
+	n &= (1 + h_n)^n = 1 + nh_n + \frac{n(n-1)}{2} h_n^2 + \dots \\
+	& \geq \frac{n(n-1)}{2} h_n^2\\
+	\end{align*}
+
+	And so,
+	\[h_n^2 \leq \frac{2}{n-1}\]
+
+\end{frame}
+
+\begin{frame}[t]
+	Now,
+
+	\[ \lim_{n \to \infty} h_n^2 \leq \lim_{n \to \infty} \frac{2}{n-1} = 0 \]
+
+	\medskip
+
+	As you will see in Problem 8 of this sheet,
+
+	\[\lim_{n \to \infty} h_n^2 = 0 \implies \lim_{n \to \infty} h_n = 0\]
+
+	Hence,
+	\[\lim_{n \to \infty} n^\frac1n = \lim_{n \to \infty} (1+h_n) = 1\]
+
+\end{frame}
+
+%------------------------------------------------
+% 3. (ii)
+\begin{frame}
+	\frametitle{Problem 3}
+	
+	\begin{block}{3. (ii)}
+		Show that the following sequence is not convergent:
+		\[ \left \{ a_n = (-1)^n \left ( \frac12 - \frac1n \right )\right \} \]
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 3}
+
+	\textit{Solution} to 3. (ii) -
+
+	\bigskip
+
+	Consider the following subsequences of $\{a_n\}$.
+
+	\[\{a_{2n}\} = \left \{ \frac12 - \frac1n \right \}\]
+	\[\{a_{2n+1}\} = \left \{ - \left (\frac12 - \frac1n \right ) \right \}\]
+
+	Now,
+
+	\[\lim_{n \to \infty} a_{2n} = \frac12\]
+	\[\lim_{n \to \infty} a_{2n+1} = - \frac12\]
+
+	Since the sequence $\{a_n\}$ has 2 subsequences $\{a_{2n}\}$ and $\{a_{2n+1}\}$ converging to different limits, $\{a_n\}$ is not convergent.
+\end{frame}
+
+%------------------------------------------------
+% 5. (ii)
+\begin{frame}
+	\frametitle{Problem 5}
+	
+	\begin{block}{5. (ii)}
+		Prove that the following sequence is convergent by showing that it is monotone and bounded. Also find its limit:
+		\[ a_1 = \sqrt2, a_{n+1} = \sqrt{2 + a_n} ~ \forall n \geq 1\]
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 5}
+
+	\textit{Solution} to 5. (ii) -
+
+	\bigskip
+
+	\textbf{Claim 1:} $a_n \leq 2 ~ \forall n$
+	
+	\medskip
+	
+	We will show this by induction.
+
+	\smallskip
+
+	Base-case : $n = 1$ as $a_1 = \sqrt 2 \leq 2$
+
+	Assuming that inductive hypothesis is true for $k \leq n$,
+	\[a_{n+1} = \sqrt{2 + a_n} \leq \sqrt{2 + 2} \leq 2\]
+
+	\medskip
+
+	\textbf{Claim 2:} $\{a_n\}$ is monotonically increasing.
+	\begin{align*}
+		& a_n \leq a_{n+1} \\
+		\Leftrightarrow ~ & a_n \leq \sqrt{2 + a_n} \\
+		\Leftrightarrow ~ & a_n^2 \leq 2 + a_n \\
+		\Leftrightarrow ~ & (a_n + 1)(a_n - 2) \leq 0 ~ \text{which is true}\\
+	\end{align*}
+	
+\end{frame}
+
+\begin{frame}[t]
+	Using both claims, $\{a_n\}$ is bounded and monotonic. Hence, it is convergent and converges to a limit $L$.
+
+	\medskip
+
+	Now to find $L$, we use the continuity of $f(x) = \sqrt{2+x}$,
+	\begin{align*}
+		\lim_{n \to \infty} a_n &= \lim_{n \to \infty} a_{n+1} \\
+		L &= \lim_{n \to \infty} \sqrt{2 + a_n} \\
+		L &= \sqrt{2 + \lim_{n \to \infty} a_n} \\
+		L &= \sqrt{2 + L} \\
+		L &= 2 \\
+	\end{align*}
+
+	Hence, $\lim_{n \to \infty} a_n = 2$.
+
+	\medskip
+
+	You can also show this using $(\epsilon-N)$ definition of limits by \textit{guessing} the limit as 2.
+
+
+\end{frame}
+
+%------------------------------------------------
+% 6
+\begin{frame}
+	\frametitle{Problem 6}
+	
+	\begin{block}{6}
+		If $\lim_{n \to \infty} a_n = L$ then find $\lim_{n \to \infty} a_{n+1}$ and $\lim_{n \to \infty} |a_n|$.
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 6}
+
+	\textit{Solution} to 6 -
+
+	\bigskip
+
+	\textbf{Claim 1:} $\lim_{n \to \infty} a_{n+1} = L$
+
+	\medskip
+
+	We have to show that $~ \forall \epsilon > 0, ~ \exists n_1 \in \mathbb{N}$ such that $\forall n > n_1$, 
+	\[ \left | a_{n+1} - L \right | < \epsilon\]
+
+	It is given to us that $\lim _{n \to \infty} a_n = L$, and hence, $~ \forall \epsilon_0 > 0, ~ \exists n_0(\epsilon_0) \in \mathbb{N}$ such that $\forall n > n_0$, 
+	\[ \left | a_{n} - L \right | < \epsilon_0\]
+
+	Now, set $\epsilon_0 = \epsilon$ in the 2nd equation.
+	We have,
+	\begin{align*}
+		|a_n - L| < \epsilon ~ &\forall n > n_0(\epsilon) \\
+		\Rightarrow |a_{n+1} - L| < \epsilon ~ &\forall n > n_0(\epsilon)
+	\end{align*}
+
+\end{frame}
+
+\begin{frame}[t]
+	Hence, if we set $n_1 = n_0(\epsilon)$, we have $\left | a_{n+1} - L \right | < \epsilon ~ \forall n \geq n_1$ which completes the proof.
+
+	\bigskip
+
+	\textbf{Claim 2:} $\lim_{n \to \infty} |a_n| = |L|$
+
+	\medskip
+
+	We have to show that $~ \forall \epsilon > 0, ~ \exists n_1 \in \mathbb{N}$ such that $\forall n > n_1$, 
+	\[ \left | |a_n| - |L| \right | < \epsilon\]
+
+	It is given to us that $\lim _{n \to \infty} a_n = L$, and hence, $~ \forall \epsilon_0 > 0, ~ \exists n_0(\epsilon_0) \in \mathbb{N}$ such that $\forall n > n_0$, 
+	\[ \left | a_{n} - L \right | < \epsilon_0\]
+
+	Now, note that $\left | |a_n| - |L| \right | \leq |a_n - L|$ by triangle inequality.
+
+	\smallskip
+
+	Hence, if we again set $\epsilon_0 = \epsilon$ and take $n_1 = n_0(\epsilon_0)$, we get
+	\[\left | |a_n| - |L| \right | \leq |a_n - L| < \epsilon ~ \forall n > n_1\]
+
+	And we are done.
+	
+\end{frame}
+
+%	CLOSING SLIDE
+%----------------------------------------------------------------------------------------
+
+\begin{frame}[plain] % The optional argument 'plain' hides the headline and footline
+	\begin{center}
+		{\Huge The End}
+		
+		\bigskip\bigskip % Vertical whitespace
+		
+		{\LARGE Questions? Comments?}
+	\end{center}
+\end{frame}
+
+%---------------
+%Whatsapp group
+\begin{frame}
+	\frametitle{Again}
+	Make sure to join the Whatsapp group.
+	\begin{figure}
+		\centering
+		\includegraphics[width=3cm]{./qr.jpeg}
+		\caption{https://tinyurl.com/ma105tut}
+	\end{figure}
+	
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
