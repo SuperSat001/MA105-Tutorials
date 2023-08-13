@@ -1,0 +1,589 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 2.0 (March 8, 2022)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Author:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	11pt, % Set the default font size, options include: 8pt, 9pt, 10pt, 11pt, 12pt, 14pt, 17pt, 20pt
+	%t, % Uncomment to vertically align all slide content to the top of the slide, rather than the default centered
+	%aspectratio=169, % Uncomment to set the aspect ratio to a 16:9 ratio which matches the aspect ratio of 1080p and 4K screens and projectors
+]{beamer}
+
+\graphicspath{{Images/}{./}} % Specifies where to look for included images (trailing slash required)
+
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule for better rules in tables
+\usepackage{mathtools}
+
+%----------------------------------------------------------------------------------------
+%	SELECT LAYOUT THEME
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with a number of default layout themes which change the colors and layouts of slides. Below is a list of all themes available, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+%----------------------------------------------------------------------------------------
+%	SELECT COLOR THEME
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with a number of color themes that can be applied to any layout theme to change its colors. Uncomment each of these in turn to see how they change the colors of your selected layout theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{monarca}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{spruce}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%----------------------------------------------------------------------------------------
+%	SELECT FONT THEME & FONTS
+%----------------------------------------------------------------------------------------
+
+% Beamer comes with several font themes to easily change the fonts used in various parts of the presentation. Review the comments beside each one to decide if you would like to use it. Note that additional options can be specified for several of these font themes, consult the beamer documentation for more information.
+
+\usefonttheme{default} % Typeset using the default sans serif font
+%\usefonttheme{serif} % Typeset using the default serif font (make sure a sans font isn't being set as the default font if you use this option!)
+%\usefonttheme{structurebold} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in bold
+%\usefonttheme{structureitalicserif} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in italic serif
+%\usefonttheme{structuresmallcapsserif} % Typeset important structure text (titles, headlines, footlines, sidebar, etc) in small caps serif
+
+%------------------------------------------------
+
+%\usepackage{mathptmx} % Use the Times font for serif text
+\usepackage{palatino} % Use the Palatino font for serif text
+
+%\usepackage{helvet} % Use the Helvetica font for sans serif text
+\usepackage[default]{opensans} % Use the Open Sans font for sans serif text
+%\usepackage[default]{FiraSans} % Use the Fira Sans font for sans serif text
+%\usepackage[default]{lato} % Use the Lato font for sans serif text
+
+%----------------------------------------------------------------------------------------
+%	SELECT INNER THEME
+%----------------------------------------------------------------------------------------
+
+% Inner themes change the styling of internal slide elements, for example: bullet points, blocks, bibliography entries, title pages, theorems, etc. Uncomment each theme in turn to see what changes it makes to your presentation.
+
+%\useinnertheme{default}
+\useinnertheme{circles}
+%\useinnertheme{rectangles}
+%\useinnertheme{rounded}
+%\useinnertheme{inmargin}
+
+%----------------------------------------------------------------------------------------
+%	SELECT OUTER THEME
+%----------------------------------------------------------------------------------------
+
+% Outer themes change the overall layout of slides, such as: header and footer lines, sidebars and slide titles. Uncomment each theme in turn to see what changes it makes to your presentation.
+
+%\useoutertheme{default}
+%\useoutertheme{infolines}
+%\useoutertheme{miniframes}
+%\useoutertheme{smoothbars}
+%\useoutertheme{sidebar}
+%\useoutertheme{split}
+%\useoutertheme{shadow}
+%\useoutertheme{tree}
+%\useoutertheme{smoothtree}
+
+%\setbeamertemplate{footline} % Uncomment this line to remove the footer line in all slides
+%\setbeamertemplate{footline}[page number] % Uncomment this line to replace the footer line in all slides with a simple slide count
+
+%\setbeamertemplate{navigation symbols}{} % Uncomment this line to remove the navigation symbols from the bottom of all slides
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title[Tut 2]{Sequences, limits, continuity, differentiability} % The short title in the optional parameter appears at the bottom of every slide, the full title in the main parameter is only on the title page
+
+% \subtitle{MA105 Tutorial Sheet - 1} % Presentation subtitle, remove this command if a subtitle isn't required
+
+\author[Satyankar Chandra]{Satyankar Chandra \\ \scriptsize Dept. of CSE, 2nd Year} % Presenter name(s), the optional parameter can contain a shortened version to appear on the bottom of every slide, while the main parameter will appear on the title slide
+
+% \institute[UC]{IIT Bombay \\ \smallskip \textit{22b0967@iitb.ac.in}} % Your institution, the optional parameter can be used for the institution shorthand and will appear on the bottom of every slide after author names, while the required parameter is used on the title slide and can include your email address or additional information on separate lines
+
+\date[August 16, 2023]{MA105 Tutorial Sheet - 1 \\ \scriptsize August 16, 2023 16:00-17:00} % Presentation date or conference/meeting name, the optional parameter can contain a shortened version to appear on the bottom of every slide, while the required parameter value is output to the title slide
+
+%----------------------------------------------------------------------------------------
+\setbeamertemplate{navigation symbols}{}
+\begin{document}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE SLIDE
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+	\titlepage % Output the title slide, automatically created using the text entered in the PRESENTATION INFORMATION block above
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS SLIDE
+%----------------------------------------------------------------------------------------
+
+% The table of contents outputs the sections and subsections that appear in your presentation, specified with the standard \section and \subsection commands. You may either display all sections and subsections on one slide with \tableofcontents, or display each section at a time on subsequent slides with \tableofcontents[pausesections]. The latter is useful if you want to step through each section and mention what you will discuss.
+
+\begin{frame}
+	\frametitle{Problems to be discussed} % Slide title, remove this command for no title
+	
+	%\tableofcontents % Output the table of contents (all sections on one slide)
+	%\tableofcontents[pausesections] % Output the table of contents (break sections up across separate slides)
+	Problem -
+	\begin{itemize}
+		\item 5
+		\item 7
+		\item 9
+		\item 10
+		\item 12
+		\item 13. (i), (ii)
+	\end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION BODY SLIDES
+%----------------------------------------------------------------------------------------
+
+% \section{1} % Sections are added in order to organize your presentation into discrete blocks, all sections and subsections are automatically output to the table of contents as an overview of the talk but NOT output in the presentation as separate slides
+
+%------------------------------------------------
+% 5. (ii)
+\begin{frame}
+	\frametitle{Problem 5}
+	
+	\begin{block}{5. (ii)}
+		Prove that the following sequence is convergent by showing that it is monotone and bounded. Also find its limit:
+		\[ a_1 = \sqrt2, a_{n+1} = \sqrt{2 + a_n} ~ \forall n \geq 1\]
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 5}
+
+	\textit{Solution} to 5. (ii) -
+
+	\bigskip
+
+	\textbf{Claim 1:} $a_n \leq 2 ~ \forall n$
+	
+	\medskip
+	
+	We will show this by induction.
+
+	\smallskip
+
+	Base-case : $n = 1$ as $a_1 = \sqrt 2 \leq 2$
+
+	Assuming that inductive hypothesis is true for $k \leq n$,
+	\[a_{n+1} = \sqrt{2 + a_n} \leq \sqrt{2 + 2} \leq 2\]
+
+	\medskip
+
+	\textbf{Claim 2:} $\{a_n\}$ is monotonically increasing.
+	\begin{align*}
+		& a_n \leq a_{n+1} \\
+		\Leftrightarrow ~ & a_n \leq \sqrt{2 + a_n} \\
+		\Leftrightarrow ~ & a_n^2 \leq 2 + a_n \\
+		\Leftrightarrow ~ & (a_n + 1)(a_n - 2) \leq 0 ~ \text{which is true}\\
+	\end{align*}
+	
+\end{frame}
+
+\begin{frame}[t]
+	Using both claims, $\{a_n\}$ is bounded and monotonic. Hence, it is convergent and converges to a limit $L$.
+
+	\medskip
+
+	Now to find $L$, we use the continuity of $f(x) = \sqrt{2+x}$,
+	\begin{align*}
+		\lim_{n \to \infty} a_n &= \lim_{n \to \infty} a_{n+1} \\
+		L &= \lim_{n \to \infty} \sqrt{2 + a_n} \\
+		L &= \sqrt{2 + \lim_{n \to \infty} a_n} \\
+		L &= \sqrt{2 + L} \\
+		L &= 2 \\
+	\end{align*}
+
+	Hence, $\lim_{n \to \infty} a_n = 2$.
+
+	\medskip
+
+	You can also show this using $(\epsilon-N)$ definition of limits by \textit{guessing} the limit as 2.
+
+
+\end{frame}
+%------------------------------------------------
+% 7
+\begin{frame}
+	\frametitle{Problem 7}
+	
+	\begin{block}{7.}
+		If $\lim _{n \to \infty} a_n = L \neq 0$, then show that $\exists n_0 \in \mathbb{N}$ such that
+		\[|a_n| \geq \frac{|L|}{2} \hspace{10pt} \forall n \geq n_0\]
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 7}
+
+	\textit{Solution} to 7 -
+
+	\bigskip
+	
+	It is given to us that $\lim _{n \to \infty} a_n = L$, and hence, $~ \forall \epsilon_0 > 0, ~ \exists n_0(\epsilon_0) \in \mathbb{N}$ such that $\forall n > n_0$, 
+	\[ \left | a_{n} - L \right | < \epsilon_0\]
+
+	\medskip
+
+	Now, set $\epsilon = \frac{|L|}{2}$.
+
+	We get that $\exists n_0 \in \mathbb{N}$ such that 
+	\begin{align*}
+		|a_n - L| &< \frac{|L|}{2} \\
+		\Rightarrow ||a_n| - |L|| &\leq |a_n - L| < \frac{|L|}{2} \\
+	\end{align*}
+
+	Which gives us $-\frac{|L|}{2} < |a_n| - |L|$ and hence $|a_n| \geq \frac{|L|}{2} ~ \forall n > n_0$.
+
+\end{frame}
+
+
+%------------------------------------------------
+% 9
+
+\setbeamertemplate{enumerate item}{(\roman{enumi})}
+\begin{frame}
+	\frametitle{Problem 9}
+	
+	\begin{block}{9.}
+		For given sequences $\{a_n\}$ and $\{b_n\}$, prove or disprove the following,
+		\begin{enumerate}
+			\item $\{a_nb_n\}$ is convergent if $\{a_n\}$ is convergent
+			\item $\{a_nb_n\}$ is convergent if $\{a_n\}$ is convergent and $\{b_n\}$ is bounded
+		\end{enumerate}
+
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 9}
+
+	\textit{Solution} to 9. (i) -
+
+	\bigskip
+
+	Consider the following sequences $\forall n \geq 1$ -
+	\[a_n = \frac1n\]
+	\[b_n = n^2\]
+
+	Here, $\{a_n\}$ is convergent with $\lim _{n \to \infty} a_n = 0$, but $\{a_n b_n\} = \{n\}$ is divergent. 
+
+	\medskip
+
+	Hence this statement is false.
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 9}
+
+	\textit{Solution} to 9. (i) -
+
+	\bigskip
+
+	Consider the following sequences $\forall n \geq 1$ -
+	\[a_n = 1\]
+	\[b_n = (-1)^n\]
+
+	Here, $\{a_n\}$ is convergent with $\lim _{n \to \infty} a_n = 1$, and $\{b_n\}$ is bounded as $|b_n| \leq 1$, but $\{a_n b_n\} = \{(-1)^n\}$ is divergent. 
+
+	\medskip
+
+	Hence this statement is false.
+
+	\medskip
+
+	Check that these sequences are also a counterexample for 9. (i).
+\end{frame}
+
+%------------------------------------------------
+% 10
+\begin{frame}
+	\frametitle{Problem 10}
+	
+	\begin{block}{10}
+		Prove that the sequence $\{a_n\}$ is convergent \textbf{iff} the sequences $\{a_{2n}\}$ and $\{a_{2n+1}\}$ are convergent to the same limit.
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 10}
+
+	\textit{Solution} to 10 -
+
+	\bigskip
+
+	Let $L$ be the common limit.
+
+	\medskip
+
+	\textbf{Forward implication:} $\{a_n\}$ convergent $\Rightarrow \{a_{2n}\}, \{a_{2n+1}\}$ convergent to same limit.
+	
+	\bigskip
+	
+	We are given that $\forall \epsilon_0 > 0, ~ \exists n_0(\epsilon_0)$ such that $|a_n - L| < \epsilon_0 ~ \forall n > n_0$.
+
+	\medskip
+
+	We need to prove that $\forall \epsilon_1 > 0, ~ \exists n_1$ such that $|a_{2n} - L| < \epsilon_1 ~ \forall n > n_1$.
+
+	\medskip
+
+	Set $\epsilon = \epsilon_1$ in the given statement, and check that having \[n_1 = n_0(\epsilon) = n_0(\epsilon_1)\] works. Hence, the sequence $\{a_{2n}\}$ is convergent to $L$.
+
+	\medskip
+
+	Similarly, the sequence $\{a_{2n+1}\}$ is convergent to $L$.
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 10}
+
+	\textbf{Reverse implication:} $\{a_{2n}\}, \{a_{2n+1}\}$ convergent to same limit $\Rightarrow$ $\{a_n\}$ is convergent.
+	
+	\bigskip
+
+	We are given that $\forall \epsilon_1 > 0, ~ \exists n_1(\epsilon_1)$ such that $|a_{2n} - L| < \epsilon_1 ~ \forall n > n_1$ and $\forall \epsilon_2 > 0, ~ \exists n_2(\epsilon_2)$ such that $|a_{2n+1} - L| < \epsilon_2 ~ \forall n > n_2$.
+
+	\medskip
+
+	We need to prove $\forall \epsilon > 0, ~ \exists n_0$ such that $|a_n - L| < \epsilon ~ \forall n > n_0$.
+
+	\medskip
+
+	Again, set $\epsilon_1 = \epsilon_2 = \epsilon$ and check that having \[n_0 = max(2n_1(\epsilon), 2n_2(\epsilon)+1)\] works. 
+
+	\medskip
+
+	Hence, the sequence $\{a_n\}$ is convergent to $L$.
+	
+	
+	
+\end{frame}
+
+%------------------------------------------------
+% 12
+\begin{frame}
+	\frametitle{Problem 12}
+	
+	\begin{block}{12.}
+		Let $f : \mathbb{R} \to \mathbb{R}$ be such that $\lim_{x \to \alpha} f(x)$ exists for some $\alpha \in \mathbb{R}$. Show that,
+		\[\lim_{h \to 0} [f(\alpha+h) - f(\alpha-h)] = 0\]
+		Analyze the converse.
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 12}
+
+	\textit{Solution} to 12 -
+
+	\bigskip
+
+	Let $\lim_{x \to \alpha} f(x)$ be equal to $L$.
+	
+	\medskip 
+
+	Then $\lim_{h \to 0} f(\alpha+h) = \lim_{h \to 0} f(\alpha-h) = L$.
+
+	\medskip
+
+	We have,
+	\[0 \leq | f(\alpha+h) - f(\alpha-h) | \leq |f(\alpha+h) - L| + |f(\alpha-h) - L|\]
+
+	By Sandwich/Squeeze theorem,
+
+	\[ \lim _{h \to 0} |f(\alpha+h) - f(\alpha-h)| = 0 \]
+
+	Now, use converse of Problem 6 to show that,
+
+	\[ \lim _{h \to 0} [f(\alpha+h) - f(\alpha-h)] = 0 \]
+
+\end{frame}
+
+\begin{frame}[t]
+	The \textbf{converse} is false.
+
+	\medskip
+
+	Consider this example with $\alpha = 0$,
+
+	\begin{equation*}
+		f(x) = 
+		\begin{cases}
+		   1 & \text{if $x = 0$}\\
+		   \frac{1}{|x|} & \text{otherwise}
+		\end{cases}
+	\end{equation*}
+
+	We can see that $[f(\alpha+h) - f(\alpha-h)] = 0 ~ \forall x \neq 0$.
+
+	\medskip
+
+	But $\lim_{h \to 0} f(x)$ does not exist.
+\end{frame}
+
+%------------------------------------------------
+% 13. (i), (ii)
+\begin{frame}
+	\frametitle{Problem 13}
+	
+	\begin{block}{13. (i)} 
+		Discuss the continuity of
+		\begin{equation*}
+			f(x) = 
+			\begin{cases}
+			   0 & \text{if $x = 0$}\\
+			   \sin(\frac1x) & \text{otherwise}
+			\end{cases}
+		\end{equation*}
+	\end{block}
+
+	\begin{block}{13. (ii)} 
+		Discuss the continuity of
+		\begin{equation*}
+			f(x) = 
+			\begin{cases}
+			   0 & \text{if $x = 0$}\\
+			   x \sin(\frac1x) & \text{otherwise}
+			\end{cases}
+		\end{equation*}
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 13}
+
+	\textit{Solution} to 13. (i) -
+
+	\bigskip
+
+	We will use the sequential criterion of (dis)continuity.
+
+	\medskip
+
+	Consider the 2 sequences $\{a_n\}$ and $\{b_n\}$,
+	\[a_n = \frac{1}{(4n+1) \frac{\pi}{2}}\]
+	\[b_n = 0\]
+	Note that $\lim_{n \to \infty} a_n = 0$ and $\lim_{n \to \infty} b_n = 0$.
+
+	\medskip
+
+	But we have,
+	\[\lim_{n \to \infty} f(a_n) = \lim_{n \to \infty} \sin((4n+1)\frac{\pi}{2}) = \lim_{n \to \infty} 1 = 1\]
+	\[\lim_{n \to \infty} f(b_n) = \lim_{n \to \infty} 0 = 0\]
+
+\end{frame}
+
+\begin{frame}[t]
+	Since we have found 2 sequences $\{a_n\}$ and $\{b_n\}$, such that \[\lim_{n \to \infty} a_n = x = 0 ~ \text{and} \lim_{n \to \infty} b_n = x = 0\] but \[1 = \lim_{n \to \infty} f(a_n) = \lim_{x \to 0} f(x) \neq \lim_{n \to \infty} f(b_n) = \lim_{x \to 0} f(x) = 0\]
+	
+	\medskip
+
+	The function is not continuous at $x=0$.
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Problem 13}
+
+	\textit{Solution} to 13. (ii) -
+
+	\bigskip
+
+	We claim that the function is continuous.
+
+	\medskip
+
+	We need to prove that $\forall \epsilon > 0, ~ \exists \delta > 0$ such that $\forall |x| < \delta$, 
+	\[|x \sin(\frac1x)| < \epsilon\]
+
+	Now, since $|\sin(\frac1x)| \leq 1 ~ \forall x \in \mathbb{R} \setminus \{0\}$.
+
+	\[ |x \sin(\frac1x)| \leq |x| < \delta \]
+
+	Hence, setting $\delta = \epsilon$ completes our proof.
+
+	
+
+\end{frame}
+
+
+%	CLOSING SLIDE
+%----------------------------------------------------------------------------------------
+
+\begin{frame}[plain] % The optional argument 'plain' hides the headline and footline
+	\begin{center}
+		{\Huge The End}
+		
+		\bigskip\bigskip % Vertical whitespace
+		
+		{\LARGE Questions? Comments? \\ Ask on group}
+	\end{center}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
